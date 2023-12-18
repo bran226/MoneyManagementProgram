@@ -16,14 +16,41 @@ public class productData {
     private String type;
     private String category;
     private Double amount;
+    private String comment;
     private Date date;
 
-    public productData(Integer id,String category, String type, Double amount, Date date) {
+    public productData(Integer id,String category, String type, Double amount, String comment, Date date) {
         this.id = id;
         this.type = type;
         this.amount = amount;
         this.category = category;
+        this.comment = comment;
         this.date = date;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getType() {
+        return type;
+    }
+    
+    public Double getAmount(){
+        return amount;
+    }
+    
+    public String getComment(){
+        return comment;
+    }
+    
+    public Date getDate() {
+        return date;
+    }
+
 
 }

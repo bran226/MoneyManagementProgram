@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,52 +11,80 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.392" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tubespbo2.FXMLDocumentController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tubespbo2.FXMLDocumentController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <AnchorPane fx:id="si_loginForm" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-form" stylesheets="@loginDesign.css">
                <children>
-                  <Label layoutX="33.0" layoutY="81.0" styleClass="head-label" stylesheets="@loginDesign.css" text="Login" textFill="#0caaff">
+                  <Label layoutX="33.0" layoutY="81.0" stylesheets="@loginDesign.css" text="Login" textFill="#398150">
                      <font>
                         <Font size="20.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="title" />
+                        <String fx:value="head-label" />
+                     </styleClass>
                   </Label>
                   <PasswordField fx:id="si_password" layoutX="34.0" layoutY="164.0" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginDesign.css" />
-                  <Hyperlink fx:id="si_forgotpass" layoutX="32.0" layoutY="200.0" text="Forgot Password?" />
-                  <Button fx:id="si_loginbtn" layoutX="34.0" layoutY="224.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Login" textFill="#228be7" />
+                  <Button fx:id="si_loginbtn" layoutX="34.0" layoutY="224.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Login" textFill="#398150" />
                   <TextField fx:id="si_username" layoutX="34.0" layoutY="125.0" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="textfield" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="white-form" stylesheets="@loginDesign.css">
+            <AnchorPane fx:id="su_registfform" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-form" stylesheets="@loginDesign.css" visible="false">
                <children>
-                  <Label layoutX="34.0" layoutY="81.0" styleClass="head-label" stylesheets="@loginDesign.css" text="Register Account" textFill="#0caaff">
+                  <Label layoutX="34.0" layoutY="81.0" stylesheets="@loginDesign.css" text="Register Account" textFill="#398150">
                      <font>
                         <Font size="20.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="head-label" />
+                        <String fx:value="title" />
+                     </styleClass>
                   </Label>
                   <PasswordField fx:id="su_password" layoutX="35.0" layoutY="164.0" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" />
-                  <Button fx:id="su_signupbtn" layoutX="35.0" layoutY="301.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="30.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Sign Up" textFill="#228be7" />
+                  <Button fx:id="su_signupbtn" layoutX="35.0" layoutY="253.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="30.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Sign Up" textFill="#398150" />
                   <TextField fx:id="su_username" layoutX="35.0" layoutY="125.0" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="textfield" />
-                  <ComboBox fx:id="su_question" layoutX="35.0" layoutY="207.0" prefHeight="30.0" prefWidth="220.0" promptText="Question" styleClass="textfield" />
-                  <TextField fx:id="su_answer" layoutX="36.0" layoutY="247.0" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" promptText="Answer" styleClass="textfield" />
+                  <Hyperlink fx:id="backtologin" layoutX="34.0" layoutY="295.0" onAction="#switchForm" stylesheets="@mainForm.css" text="Back To Login">
+                     <styleClass>
+                        <String fx:value="title" />
+                        <String fx:value="Hyperlink" />
+                     </styleClass>
+                  </Hyperlink>
+                  <PasswordField fx:id="su_confirmpassword" layoutX="35.0" layoutY="205.0" onAction="#loginBtn" prefHeight="30.0" prefWidth="220.0" promptText="Confirm Password" styleClass="textfield" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="side_form" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@loginDesign.css">
+            <AnchorPane fx:id="side_form" prefHeight="400.0" prefWidth="300.0" styleClass="nav-form">
                <children>
-                  <Label layoutX="81.0" layoutY="307.0" text="Create Account" textFill="WHITE">
+                  <Label layoutX="77.0" layoutY="309.0" text="Create Account" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="title" />
+                        <String fx:value="shadow" />
+                     </styleClass>
                   </Label>
-                  <Button fx:id="side_Createbtn" layoutX="40.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="220.0" styleClass="create-account" stylesheets="@loginDesign.css" text="Create new Account" textFill="#228be7" />
-                  <Label layoutX="10.0" layoutY="163.0" styleClass="title" stylesheets="@loginDesign.css" text="Money Management Program" textFill="WHITE">
+                  <Button fx:id="side_Createbtn" layoutX="40.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="220.0" stylesheets="@loginDesign.css" text="Create new Account" textFill="#398150">
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="shadow" />
+                     </styleClass></Button>
+                  <Label layoutX="61.0" layoutY="122.0" stylesheets="@loginDesign.css" text="DOMPET" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="42.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="title" />
+                        <String fx:value="shadow" />
+                     </styleClass>
                   </Label>
                   <Button fx:id="side_alreadyHave" layoutX="40.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="220.0" styleClass="create-account" stylesheets="@loginDesign.css" text="Already have an Account" textFill="#228be7" visible="false" />
                </children>
+               <stylesheets>
+                  <URL value="@loginDesign.css" />
+                  <URL value="@mainForm.css" />
+               </stylesheets>
             </AnchorPane>
          </children>
       </AnchorPane>

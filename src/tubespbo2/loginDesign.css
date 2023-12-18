@@ -16,13 +16,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .head-label {
-    -fx-border-color: #0caaff;
+    -fx-border-color: #398150;
     -fx-border-width: 0 0 1px 0;
     -fx-border-padding: 0 0 5px 0 ;
 }
 
 .login-btn {
-    -fx-border-color: rgb(10, 102, 194);
+    -fx-border-color: #398150;
     -fx-background-color: white;
     -fx-border-style: solid;
     -fx-border-width: 1px;
@@ -30,17 +30,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-width: 70px;
     -fx-border-radius: 15px;
     -fx-transition: background-color 0.15s;
+    -fx-font-weight: bold;
 
 
-    }
+
+}
 
 .login-btn:hover {
     -fx-border-width: 2px;
-    -fx-background-color: rgba(35, 108, 181, 0.163);;
     -fx-cursor: hand;
     -fx-border-radius: 100px;
-    }
-    
+}
+
 .create-account {
     -fx-border-color: #0caaff;
     -fx-background-color: white;
@@ -51,27 +52,40 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-transition: background-color 0.15s;
 
 
-    }
+}
 
 .create-account:hover {
     -fx-border-width: 2px;
     -fx-cursor: hand;
-    }
-    
+}
+
 .title {
     -fx-font-weight: bold;
-    -fx-border-width: 1px 1px 1px 1px;
-    -fx-border-padding: 5px 5px 5px 5px ;
-    -fx-border-color: #ffff;
-        
-    }
-    
+
+}
+
 .textfield {
     -fx-background-color: transparent;
-    -fx-border-color: linear-gradient(to bottom right, #0f6789, #281655);
+    -fx-border-color: #398150;
     -fx-border-width: .5px;
-    }
-    
+}
+
 .textfield:focused {
     -fx-border-width: 1px;
-    }
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.backto {
+    -fx-font-color: #398150;
+
+}
+
+.Hyperlink{
+    -fx-text-fill: #398150;
+}
+.Hyperlink:hover{
+    -fx-text-fill: #606060;
+}

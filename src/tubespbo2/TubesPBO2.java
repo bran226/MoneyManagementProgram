@@ -22,11 +22,12 @@ public class TubesPBO2 extends Application {
         
         Scene scene = new Scene(root);
         
-        stage.setTitle("Money Management System");
+        stage.setTitle("Dompet");
         stage.setMinHeight(445);
         stage.setMinWidth(610);
         stage.setMaxHeight(445);
         stage.setMaxWidth(610);
+        stage.setResizable(false);
         
         
         stage.setScene(scene);
