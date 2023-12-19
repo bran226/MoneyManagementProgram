@@ -107,7 +107,7 @@ public class FXMLDocumentController implements Initializable {
             alert.showAndWait();
         } else {
 
-            String selctData = "SELECT username, password FROM employee WHERE username = ? and password = ?";
+            String selctData = "SELECT username, password FROM employee WHERE username = ? AND password = ?";
 
             Connection cn = database.connectDB();
 

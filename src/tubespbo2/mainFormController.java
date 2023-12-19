@@ -164,7 +164,7 @@ public class mainFormController implements Initializable {
             if (result.next()) {
                 te = result.getFloat("SUM(amount)");
             }
-            dashboard_expense.setText("Rp. " + te);
+            dashboard_expense.setText("Rp. " + (long)te);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -186,7 +186,7 @@ public class mainFormController implements Initializable {
             if (result.next()) {
                 ti = result.getFloat("SUM(amount)");
             }
-            dashboard_income.setText("Rp. " + ti);
+            dashboard_income.setText("Rp. " + (long)ti);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -248,7 +248,7 @@ public class mainFormController implements Initializable {
             e.printStackTrace();
         }
 
-        dashboard_balance.setText("Rp. " + total_all);
+        dashboard_balance.setText("Rp. " + (long)total_all);
 
     }
 
@@ -601,6 +601,8 @@ public class mainFormController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Successfully add balance!");
                 alert.showAndWait();
+                
+                addbalance_txtfield.setText("");
 
                 dashboard_form.setVisible(true);
                 inventory_form.setVisible(false);
