@@ -42,7 +42,7 @@ import javafx.stage.Stage;
  *
  * @author asus
  */
-public class mainFormController implements Initializable {
+public class mainFormController extends AbstractClass implements Initializable {
 
     @FXML
     private BarChart<?, ?> dashboard_IncomeandExpenses;
@@ -67,9 +67,6 @@ public class mainFormController implements Initializable {
 
     @FXML
     private Button inventory_btn;
-
-    @FXML
-    private Button inventory_clearbtn;
 
     @FXML
     private TableColumn<productData, Double> inventory_col_amount;
@@ -251,40 +248,7 @@ public class mainFormController implements Initializable {
         dashboard_balance.setText("Rp. " + (long)total_all);
 
     }
-
-//    public void dashboardExpenseStructure() {
-//        ObservableList<PieChartdata> pieChartData = FXCollections.observableArrayList();
-//
-//        String sql = "SELECT category, SUM(amount) WHERE type = 'Expense' FROM product GROUP BY category";
-//
-//        connect = database.connectDB();
-//
-//        try {
-//
-//            prepare = connect.prepareStatement(sql);
-//            result = prepare.executeQuery();
-//
-//            while (result.next()) {
-//
-//                PieChart.data = new PieChart(result.getInt("id"),
-//                        result.getString("prod_id"),
-//                        result.getString("prod_name"),
-//                        result.getString("type"),
-//                        result.getInt("stock"),
-//                        result.getDouble("price"),
-//                        result.getString("status"),
-//                        result.getString("image"),
-//                        result.getDate("date"));
-//
-//                listData.add(prodData);
-//
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+    
     public void dashboardIncomeandExpensesChart() {
         dashboard_IncomeandExpenses.getData().clear();
 
@@ -400,7 +364,6 @@ public class mainFormController implements Initializable {
                     // TO UPDATE YOUR TABLE VIEW
                     inventoryShowData();
                     // TO CLEAR YOUR FIELDS
-                    inventoryClearBtn();
                 } else {
                     alert = new Alert(AlertType.ERROR);
                     alert.setTitle("Error Message");
@@ -446,7 +409,6 @@ public class mainFormController implements Initializable {
                     // TO UPDATE YOUR TABLE VIEW
                     inventoryShowData();
                     // TO CLEAR YOUR FIELDS
-                    inventoryClearBtn();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -461,13 +423,6 @@ public class mainFormController implements Initializable {
         }
     }
 
-    public void inventoryClearBtn() {
-
-        inventory_amount.setText("");
-        inventory_comment.setText("");
-        inventory_type.getSelectionModel().clearSelection();
-        inventory_category.getSelectionModel().clearSelection();
-    }
 
     public ObservableList<productData> inventoryDataList() {
 
@@ -535,7 +490,7 @@ public class mainFormController implements Initializable {
         data.id = prodData.getId();
     }
 
-    private String[] typeList = {"Income", "Expense", "Transfer"};
+    private String[] typeList = {"Income", "Expense"};
 
     public void inventoryTypeList() {
 
@@ -559,6 +514,7 @@ public class mainFormController implements Initializable {
             categoryL.add(data);
         }
 
+        
         ObservableList listData = FXCollections.observableArrayList(categoryL);
         inventory_category.setItems(listData);
 
@@ -620,7 +576,8 @@ public class mainFormController implements Initializable {
         }
 
     }
-
+    
+    @Override
     public void switchForm(ActionEvent event) {
 
         if (event.getSource() == dashboard_btn) {

@@ -40,7 +40,7 @@ import javafx.util.Duration;
  *
  * @author asus
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController  extends AbstractClass implements Initializable {
 
     @FXML
     private AnchorPane su_registfform;
@@ -219,19 +219,6 @@ public class FXMLDocumentController implements Initializable {
                     su_registfform.setVisible(false);
                     si_loginForm.setVisible(true);
 
-//                    TranslateTransition slider = new TranslateTransition();
-//
-//                    slider.setNode(side_form);
-//
-//                    slider.setToX(0);
-//                    slider.setDuration(Duration.seconds(.5));
-//
-//                    slider.setOnFinished((ActionEvent e) -> {
-//                        side_alreadyHave.setVisible(false);
-//                        side_Createbtn.setVisible(true);
-//                    });
-//
-//                    slider.play();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -239,7 +226,8 @@ public class FXMLDocumentController implements Initializable {
 
         }
     }
-
+    
+    @Override
     public void switchForm(ActionEvent event) {
         if (event.getSource() == side_Createbtn) {
             su_registfform.setVisible(true);
@@ -248,37 +236,13 @@ public class FXMLDocumentController implements Initializable {
             su_registfform.setVisible(false);
             si_loginForm.setVisible(true);
         }
-//        TranslateTransition slider = new TranslateTransition();
-
-//        if (event.getSource() == side_Createbtn) {
-//            slider.setNode(side_form);
-//            slider.setToX(300);
-//            slider.setDuration(Duration.seconds(.5));
-//
-//            slider.setOnFinished((ActionEvent e) -> {
-//                side_alreadyHave.setVisible(true);
-//                side_Createbtn.setVisible(false);
-//
-//            });
-//
-//            slider.play();
-//        } else if (event.getSource() == side_alreadyHave) {
-//            slider.setNode(side_form);
-//            slider.setToX(0);
-//            slider.setDuration(Duration.seconds(.5));
-//
-//            slider.setOnFinished((ActionEvent e) -> {
-//                side_alreadyHave.setVisible(false);
-//                side_Createbtn.setVisible(true);
-//            });
-//
-//            slider.play();
-//        }
+        
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
+
 
 }
